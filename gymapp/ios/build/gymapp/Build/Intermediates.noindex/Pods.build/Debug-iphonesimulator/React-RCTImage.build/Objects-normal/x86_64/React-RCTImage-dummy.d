@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Target\ Support\ Files/React-RCTImage/React-RCTImage-dummy.m \
-  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Target\ Support\ Files/React-RCTImage/React-RCTImage-prefix.pch
+  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Target\ Support\ Files/React-RCTImage/React-RCTImage-dummy.m \
+  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Target\ Support\ Files/React-RCTImage/React-RCTImage-prefix.pch
