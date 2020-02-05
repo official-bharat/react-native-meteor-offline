@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/node_modules/react-native/Libraries/TypeSafety/RCTConvertHelpers.mm \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Target\ Support\ Files/RCTTypeSafety/RCTTypeSafety-prefix.pch \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/node_modules/react-native/Libraries/TypeSafety/RCTConvertHelpers.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/FBLazyVector/FBLazyVector/FBLazyVector.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/FBLazyVector/FBLazyVector/FBLazyIterator.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Folly/folly/Optional.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Folly/folly/Portability.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Folly/folly/portability/Config.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Folly/folly/CPortability.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Folly/folly/Traits.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Folly/folly/Utility.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Folly/folly/lang/Exception.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Folly/folly/CppAttributes.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTConvert.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTAnimationType.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTBorderStyle.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTDefines.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTInspectorDevServerHelper.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTPackagerConnection.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTLog.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTAssert.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTUtils.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTPointerEvents.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTTextDecorationLineType.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/Yoga/yoga/Yoga.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/Yoga/yoga/YGEnums.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/Yoga/yoga/YGMacros.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/Yoga/yoga/YGValue.h
