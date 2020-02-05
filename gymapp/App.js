@@ -30,31 +30,30 @@ class RNDemo extends Component {
   constructor(props) {
     super(props);
     this.listRef = React.
-    createRef();
+      createRef();
     this.state = {
       linksGenerated: [],
-      disconnected : false,
+      disconnected: false,
       disconnectedData: []
     };
     Meteor.ddp.on('connected', () => {
-      const { disconnected, disconnectedData } = this.state;
-      if(disconnected){
+      const { disconnected, disconnectedData, linksGenerated } = this.state;
+      if (disconnected) {
         disconnectedData.map((item) => {
           Meteor.call('links.insert', item.title, item.url, (error) => {
             if (error) {
-              console.log('Insert error', error.error);
             }
           });
         });
         this.setState({
-          disconnected : true,
-          disconnectedData : []
+          disconnected: true,
+          disconnectedData: [],
         })
       }
     })
   }
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.links !== undefined && nextProps.links.length > 0) {
+    if (nextProps.links !== undefined && nextProps.links.length > 0 && !prevState.disconnected) {
       return AsyncStorage.setItem('links', JSON.stringify(nextProps.links))
     }
     else return null
@@ -67,87 +66,91 @@ class RNDemo extends Component {
   addItem = () => {
     const item = data[Math.floor(Math.random() * data.length)];
     const { connected } = Meteor.status();
-    let { disconnectedData } = this.state;
+    let { disconnectedData, linksGenerated } = this.state;
+    linksGenerated.unshift(item);
     disconnectedData.push(item);
-    if(!connected){
+    if (!connected) {
       this.setState({
-        disconnected : true,
-        disconnectedData
-      })
+        disconnected: true,
+        disconnectedData,
+        linksGenerated
+      }, () => {
+        AsyncStorage.setItem('links', JSON.stringify(linksGenerated))
+      }
+      )
     } else {
       Meteor.call('links.insert', item.title, item.url, (error) => {
         if (error) {
-          console.log('Insert error', error.error);
         }
       });
     }
   }
 
-pressItem = (url) => {
-  Linking.canOpenURL(url)
-    .then((supported) => {
-      if (supported) {
-        Linking.openURL(url);
-      }
-    })
-    .catch((err) => console.log('Linking error: ', err));
-};
-GetAsyncStorageData = async () => {
-  const Saved = await AsyncStorage.getItem('links');
-  if (Saved != null) {
-    this.setState({
-      linksGenerated: JSON.parse(Saved)
-    })
+  pressItem = (url) => {
+    Linking.canOpenURL(url)
+      .then((supported) => {
+        if (supported) {
+          Linking.openURL(url);
+        }
+      })
+      .catch((err) => console.log('Linking error: ', err));
+  };
+  GetAsyncStorageData = async () => {
+    const Saved = await AsyncStorage.getItem('links');
+    if (Saved != null) {
+      this.setState({
+        linksGenerated: JSON.parse(Saved)
+      })
+    }
   }
-}
-getAllItems = (status, links) => {
-  return (
-    <View style={{ backgroundColor: '#f8f8f8', flexGrow: 1 }}>
-      <ListItem
-        title="Connection Status"
-        rightTitle={status.status}
-        hideChevron
-        rightTitleStyle={{ width: '130%' }}
-      />
-      {links.map((link) => {
-        return (
-          <ListItem
-            key={link._id}
-            title={link.title}
-            subtitle={link.url}
-            onPress={() => this.pressItem(link.url)}
-          />
-        );
-      })}
-      <TouchableOpacity onPress={() => this.addItem()}>
-        <Icon
-          raised
-          name='plus'
-          type='font-awesome'
-          color='#00aced'
-          containerStyle={{ bottom: 30, right: 20 }}
-          disabled
-
+  getAllItems = (status, links) => {
+    return (
+      <View style={{ backgroundColor: '#f8f8f8', flexGrow: 1 }}>
+        <ListItem
+          title="Connection Status"
+          rightTitle={status.status}
+          hideChevron
+          rightTitleStyle={{ width: '130%' }}
         />
-      </TouchableOpacity>
+        {links.map((link) => {
+          return (
+            <ListItem
+              key={link._id}
+              title={link.title}
+              subtitle={link.url}
+              onPress={() => this.pressItem(link.url)}
+            />
+          );
+        })}
+        <TouchableOpacity onPress={() => this.addItem()}>
+          <Icon
+            raised
+            name='plus'
+            type='font-awesome'
+            color='#00aced'
+            containerStyle={{ bottom: 30, right: 20 }}
+            disabled
+
+          />
+        </TouchableOpacity>
 
 
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  )
-}
+        <Text>Open up App.js to start working on your app!</Text>
+      </View>
+    )
+  }
 
-render() {
-  const { linksGenerated } = this.state
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={{ height: '500%' }}>
-        {this.props.links ? this.getAllItems(this.props.status, linksGenerated) : <Text>NOT READY</Text>}
-      </ScrollView>
-    </SafeAreaView>
-  );
-  //}
-}
+  render() {
+    const { linksGenerated } = this.state
+    return (
+      <SafeAreaView style={styles.container}>
+        <ScrollView contentContainerStyle={{ height: '1000%' }}>
+          {this.props.links ? this.getAllItems(this.props.status, linksGenerated) : <Text>NOT READY</Text>}
+        </ScrollView>
+      </SafeAreaView>
+    );
+    //}
+  }
 }
 
 const styles = StyleSheet.create({
@@ -164,7 +167,6 @@ export default withTracker(params => {
   const linksHandle = Meteor.subscribe('links');
   const loading = !linksHandle.ready();
   const linksExists = !loading;
-
   return {
     linksExists,
     links: Meteor.collection('links').find({}, { sort: { createdAt: -1 } }),
