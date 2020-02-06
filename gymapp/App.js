@@ -41,6 +41,7 @@ class RNDemo extends Component {
       if (disconnected) {
         disconnectedData.map((item) => {
           Meteor.call('links.insert', item.title, item.url, (error) => {
+            console.log(error);
             if (error) {
             }
           });
@@ -52,8 +53,8 @@ class RNDemo extends Component {
       }
     })
   }
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.links !== undefined && nextProps.links.length > 0 && !prevState.disconnected) {
+  static getDerivedStateFromProps(nextProps, state) {
+    if (nextProps.links !== undefined && nextProps.links.length > 0 && !state.disconnected) {
       return AsyncStorage.setItem('links', JSON.stringify(nextProps.links))
     }
     else return null
@@ -82,6 +83,8 @@ class RNDemo extends Component {
       Meteor.call('links.insert', item.title, item.url, (error) => {
         if (error) {
         }
+      },() => {
+        AsyncStorage.setItem('links', JSON.stringify(linksGenerated))
       });
     }
   }
@@ -105,7 +108,7 @@ class RNDemo extends Component {
   }
   getAllItems = (status, links) => {
     return (
-      <View style={{ backgroundColor: '#f8f8f8', flexGrow: 1 }}>
+      <View style={{ backgroundColor: '#f8f8f8'}}>
         <ListItem
           title="Connection Status"
           rightTitle={status.status}
@@ -144,9 +147,11 @@ class RNDemo extends Component {
     const { linksGenerated } = this.state
     return (
       <SafeAreaView style={styles.container}>
-        <ScrollView contentContainerStyle={{ height: '1000%' }}>
-          {this.props.links ? this.getAllItems(this.props.status, linksGenerated) : <Text>NOT READY</Text>}
-        </ScrollView>
+        <View style={{ flexGrow: 1 }}>
+          <ScrollView >
+            {this.props.links ? this.getAllItems(this.props.status, linksGenerated) : <Text>NOT READY</Text>}
+          </ScrollView>
+        </View>
       </SafeAreaView>
     );
     //}
