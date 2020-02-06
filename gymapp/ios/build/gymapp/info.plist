@@ -3,8 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>LastAccessedDate</key>
+<<<<<<< HEAD
 	<date>2020-02-06T15:51:23Z</date>
+=======
+	<date>2020-02-06T04:07:33Z</date>
+>>>>>>> 92664de8bffee980320a8c3466152fffa2d939fa
 	<key>WorkspacePath</key>
-	<string>/Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/gymapp.xcworkspace</string>
+	<string>/Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/gymapp.xcworkspace</string>
 </dict>
 </plist>

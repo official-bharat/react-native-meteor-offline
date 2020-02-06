@@ -82,6 +82,7 @@ class RNDemo extends Component {
     } else {
       Meteor.call('links.insert', item.title, item.url, (error) => {
         if (error) {
+          console.log('error :', error)
         }
       },() => {
         AsyncStorage.setItem('links', JSON.stringify(linksGenerated))
@@ -136,8 +137,6 @@ class RNDemo extends Component {
 
           />
         </TouchableOpacity>
-
-
         <Text>Open up App.js to start working on your app!</Text>
       </View>
     )
@@ -160,7 +159,7 @@ class RNDemo extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
