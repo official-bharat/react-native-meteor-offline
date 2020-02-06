@@ -53,7 +53,7 @@ class RNDemo extends Component {
     })
   }
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.links !== undefined && nextProps.links.length > 0) {
+    if (nextProps.links !== undefined && nextProps.links.length > 0 && !prevState.disconnected) {
       return AsyncStorage.setItem('links', JSON.stringify(nextProps.links))
     }
     else return null
@@ -80,7 +80,6 @@ class RNDemo extends Component {
       )
     } else {
       Meteor.call('links.insert', item.title, item.url, (error) => {
-        debugger
         if (error) {
           console.log('error :', error)
         }
@@ -135,8 +134,6 @@ class RNDemo extends Component {
 
           />
         </TouchableOpacity>
-
-
         <Text>Open up App.js to start working on your app!</Text>
       </View>
     )
@@ -146,7 +143,7 @@ class RNDemo extends Component {
     const { linksGenerated } = this.state
     return (
       <SafeAreaView style={styles.container}>
-        <View style = {{flexGrow : 10}}> 
+        <View style = {{flexGrow : 1}}> 
           <ScrollView >
             {this.props.links ? this.getAllItems(this.props.status, linksGenerated) : <Text>NOT READY</Text>}
           </ScrollView>

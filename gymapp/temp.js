@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, ScrollView, View, Text, Linking, SafeAreaView, } from 'react-native';
 import Meteor, { withTracker, useTracker } from '@ajaybhatia/react-native-meteor';
 import { List, ListItem, Icon } from 'react-native-elements'
-import NetInfo from '@react-native-community/netinfo'
 import { initializeMeteorOffline } from './react-native-meteor-offline';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -10,88 +9,65 @@ import AsyncStorage from '@react-native-community/async-storage';
 Meteor.connect('ws://localhost:3000/websocket');
 //initializeMeteorOffline({ log: true });
 
-const data = [
-  {
-    title: 'Meteor',
-    url: 'https://www.meteor.com',
-  },
-  {
-    title: 'Learn React Native + Meteor',
-    url: 'http://learn.handlebarlabs.com/p/react-native-meteor',
-  },
-  {
-    title: 'React Native',
-    url: 'http://facebook.github.io/react-native/',
-  }
-];
-
-class RNDemo extends Component {
-
-  constructor(props) {
-    super(props);
-    this.listRef = React.
-      createRef();
-    this.state = {
-      linksGenerated: [],
-      disconnected: false,
-      disconnectedData: []
-    };
-    Meteor.ddp.on('connected', () => {
-      const { disconnected, disconnectedData, linksGenerated } = this.state;
-      if (disconnected) {
-        disconnectedData.map((item) => {
-          Meteor.call('links.insert', item.title, item.url, (error) => {
-            if (error) {
-            }
-          });
-        });
-        this.setState({
-          disconnected: true,
-          disconnectedData: [],
-        })
-      }
-    })
-  }
-  static getDerivedStateFromProps(nextProps, state) {
-    console.log(nextProps, state)
-    if (nextProps.links !== undefined && nextProps.links.length > 0 && state.disconnected === false) {
-      return AsyncStorage.setItem('links', JSON.stringify(nextProps.links))
+const RNDemo = (props) => {
+  const [linksGenerated, setlinksGenerated] = useState([])
+  const [disconnected, setdisconnected] = useState(false)
+  const [disconnectedData, setdisconnectedData] = useState([])
+  const data = [
+    {
+      title: 'Meteor',
+      url: 'https://www.meteor.com',
+    },
+    {
+      title: 'Learn React Native + Meteor',
+      url: 'http://learn.handlebarlabs.com/p/react-native-meteor',
+    },
+    {
+      title: 'React Native',
+      url: 'http://facebook.github.io/react-native/',
     }
-    else return null
-  }
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.links !== this.props.links) {
-      this.GetAsyncStorageData()
+  ];
+
+  useEffect(() => {
+    debugger
+    console.log(props)
+    if (props.links !== undefined && props.links.length > 0) {
+      AsyncStorage.setItem('links', JSON.stringify(props.links))
+        , () => GetAsyncStorageData()
+    }
+    else {
+      null
+    }
+
+  }, [props.links])
+
+  const GetAsyncStorageData = async () => {
+    console.log("jhgvwgjvfwevguy")
+    const Saved = await AsyncStorage.getItem('links');
+    console.log(JSON.parse(Saved))
+    if (Saved != null) {
+      setlinksGenerated(JSON.parse(Saved))
     }
   }
-  addItem = () => {
+  const addItem = () => {
     const item = data[Math.floor(Math.random() * data.length)];
+    console.log(item)
     const { connected } = Meteor.status();
-    let { disconnectedData, linksGenerated } = this.state;
-    linksGenerated.unshift(item);
-    disconnectedData.push(item);
     if (!connected) {
-      this.setState({
-        disconnected: true,
-        disconnectedData,
-        linksGenerated
-      }, () => {
-        AsyncStorage.setItem('links', JSON.stringify(linksGenerated))
-      }
-      )
+      setdisconnected(true),
+        setlinksGenerated([...linksGenerated, item])
+      setdisconnectedData([...disconnectedData, item])
+      AsyncStorage.setItem('links', JSON.stringify(linksGenerated))
     } else {
       Meteor.call('links.insert', item.title, item.url, (error) => {
-        this.setState({
-          disconnected : false
-        })
+        debugger
         if (error) {
           console.log('error :', error)
         }
       });
     }
   }
-
-  pressItem = (url) => {
+  const pressItem = (url) => {
     Linking.canOpenURL(url)
       .then((supported) => {
         if (supported) {
@@ -100,15 +76,7 @@ class RNDemo extends Component {
       })
       .catch((err) => console.log('Linking error: ', err));
   };
-  GetAsyncStorageData = async () => {
-    const Saved = await AsyncStorage.getItem('links');
-    if (Saved != null) {
-      this.setState({
-        linksGenerated: JSON.parse(Saved)
-      })
-    }
-  }
-  getAllItems = (status, links) => {
+  const getAllItems = (status, links) => {
     return (
       <View style={{ backgroundColor: '#f8f8f8', flexGrow: 1 }}>
         <ListItem
@@ -123,11 +91,11 @@ class RNDemo extends Component {
               key={link._id}
               title={link.title}
               subtitle={link.url}
-              onPress={() => this.pressItem(link.url)}
+              onPress={() => pressItem(link.url)}
             />
           );
         })}
-        <TouchableOpacity onPress={() => this.addItem()}>
+        <TouchableOpacity onPress={() => addItem()}>
           <Icon
             raised
             name='plus'
@@ -138,35 +106,29 @@ class RNDemo extends Component {
 
           />
         </TouchableOpacity>
-
-
         <Text>Open up App.js to start working on your app!</Text>
       </View>
     )
   }
-
-  render() {
-    const { linksGenerated } = this.state
-    return (
-      <SafeAreaView style={styles.container}>
-        <ScrollView contentContainerStyle={{ flexGrow: 1, height: '10000%' }}>
-          {this.props.links ? this.getAllItems(this.props.status, linksGenerated) : <Text>NOT READY</Text>}
+  console.log(linksGenerated, disconnectedData)
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={{ flexGrow: 1 }}>
+        <ScrollView >
+          {props.links ? getAllItems(props.status, setlinksGenerated) : <Text>NOT READY</Text>}
         </ScrollView>
-      </SafeAreaView>
-    );
-    //}
-  }
+      </View>
+    </SafeAreaView>
+  )
 }
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
 });
-
 export default withTracker(params => {
 
   const linksHandle = Meteor.subscribe('links');
