@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Target\ Support\ Files/Pods-gymapp/Pods-gymapp-dummy.m
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Target\ Support\ Files/Pods-gymapp/Pods-gymapp-dummy.m

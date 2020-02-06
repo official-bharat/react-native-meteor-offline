@@ -1,34 +1,34 @@
 dependencies: \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/node_modules/react-native/Libraries/Blob/RCTBlobManager.mm \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Target\ Support\ Files/React-RCTBlob/React-RCTBlob-prefix.pch \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTBlobManager.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTBridge.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTBridgeDelegate.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTJavaScriptLoader.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTDefines.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTInspectorDevServerHelper.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTPackagerConnection.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTBridgeModule.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTFrameUpdate.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTInvalidating.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTURLRequestHandler.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTURLRequestDelegate.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTConvert.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTAnimationType.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTBorderStyle.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTLog.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTAssert.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTUtils.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTPointerEvents.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTTextDecorationLineType.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/Yoga/yoga/Yoga.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/Yoga/yoga/YGEnums.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/Yoga/yoga/YGMacros.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/Yoga/yoga/YGValue.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTNetworking.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTEventEmitter.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTNetworkTask.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTWebSocketModule.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/node_modules/react-native/Libraries/Blob/RCTBlobCollector.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-jsi/jsi/jsi.h \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Headers/Public/React-jsi/jsi/jsi-inl.h
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/node_modules/react-native/Libraries/Blob/RCTBlobManager.mm \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Target\ Support\ Files/React-RCTBlob/React-RCTBlob-prefix.pch \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTBlobManager.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTBridge.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTBridgeDelegate.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTJavaScriptLoader.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTDefines.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTInspectorDevServerHelper.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTPackagerConnection.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTBridgeModule.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTFrameUpdate.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTInvalidating.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTURLRequestHandler.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTURLRequestDelegate.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTConvert.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTAnimationType.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTBorderStyle.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTLog.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTAssert.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTUtils.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTPointerEvents.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTTextDecorationLineType.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/Yoga/yoga/Yoga.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/Yoga/yoga/YGEnums.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/Yoga/yoga/YGMacros.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/Yoga/yoga/YGValue.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTNetworking.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTEventEmitter.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTNetworkTask.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-Core/React/RCTWebSocketModule.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/node_modules/react-native/Libraries/Blob/RCTBlobCollector.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-jsi/jsi/jsi.h \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Headers/Public/React-jsi/jsi/jsi-inl.h

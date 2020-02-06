@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Target\ Support\ Files/EXErrorRecovery/EXErrorRecovery-dummy.m \
-  /Users/bharatchhabra/Desktop/react-native-meteor-offline/gymapp/ios/Pods/Target\ Support\ Files/EXErrorRecovery/EXErrorRecovery-prefix.pch
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Target\ Support\ Files/EXErrorRecovery/EXErrorRecovery-dummy.m \
+  /Users/osvinuser/Desktop/Test_Projects/gymappmeteor/gymapp/ios/Pods/Target\ Support\ Files/EXErrorRecovery/EXErrorRecovery-prefix.pch

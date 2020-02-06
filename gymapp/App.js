@@ -53,7 +53,7 @@ class RNDemo extends Component {
     })
   }
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.links !== undefined && nextProps.links.length > 0 && !prevState.disconnected) {
+    if (nextProps.links !== undefined && nextProps.links.length > 0) {
       return AsyncStorage.setItem('links', JSON.stringify(nextProps.links))
     }
     else return null
@@ -80,7 +80,9 @@ class RNDemo extends Component {
       )
     } else {
       Meteor.call('links.insert', item.title, item.url, (error) => {
+        debugger
         if (error) {
+          console.log('error :', error)
         }
       });
     }
@@ -144,9 +146,11 @@ class RNDemo extends Component {
     const { linksGenerated } = this.state
     return (
       <SafeAreaView style={styles.container}>
-        <ScrollView contentContainerStyle={{ height: '1000%' }}>
-          {this.props.links ? this.getAllItems(this.props.status, linksGenerated) : <Text>NOT READY</Text>}
-        </ScrollView>
+        <View style = {{flexGrow : 10}}> 
+          <ScrollView >
+            {this.props.links ? this.getAllItems(this.props.status, linksGenerated) : <Text>NOT READY</Text>}
+          </ScrollView>
+        </View>
       </SafeAreaView>
     );
     //}
@@ -155,7 +159,7 @@ class RNDemo extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
